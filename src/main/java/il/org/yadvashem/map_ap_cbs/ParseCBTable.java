@@ -21,7 +21,7 @@ public class ParseCBTable {
 		while ((nextLine = reader.readNext()) != null) {
 			// nextLine[] is an array of values from the line
 
-			if (nextLine[0].matches("ehri_pers-.*")) {
+			if (nextLine[0].matches("ehri_cb-.*")) {
 				CorporateBody person = new CorporateBody();
 				List<String> aliases = new ArrayList<String>();
 				List<String> dates = new ArrayList<String>();

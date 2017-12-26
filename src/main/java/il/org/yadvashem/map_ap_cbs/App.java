@@ -8,8 +8,10 @@ public class App
 {
     public static void main( String[] args )
     {
-		String mode = args[0];
-		String ehriTable = args[1];
+		String ehriTable = args[0];
+		String apTable = args[1];
+		
+		
 		
 		
     }
