@@ -10,7 +10,7 @@ import com.opencsv.CSVReader;
 
 public class ParseCBTable {
 
-	public static List<CorporateBody> parsePersonalitiesTable(String tablename) throws IOException {
+	public static List<CorporateBody> parseCBsTable(String tablename) throws IOException {
 
 		List<CorporateBody> ehriCBs = new ArrayList<CorporateBody>();
 
