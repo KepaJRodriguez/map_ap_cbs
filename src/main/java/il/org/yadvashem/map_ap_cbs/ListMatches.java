@@ -6,22 +6,23 @@ import java.util.List;
 
 public class ListMatches {
 
-	public static HashMap<String, String> listMatches(List<String> accessPoints,
+	public static HashMap<Integer, HashMap<AccessPoint, CorporateBody>> listMatches(List<AccessPoint> accessPoints,
 			List<CorporateBody> ehriPersonalities) {
 
-		HashMap<String, String> matches = new HashMap<String, String>();
-
+		HashMap<Integer, HashMap<AccessPoint, CorporateBody>> matches = new HashMap<Integer, HashMap<AccessPoint, CorporateBody>>();
+		int match_number = 0;
 		for (int i = 0; i < accessPoints.size(); i++) {
-				String ap = accessPoints.get(i);
+				AccessPoint ap = accessPoints.get(i);
 			for (int idx = 0; idx < ehriPersonalities.size(); idx++) {
 
 				CorporateBody person = ehriPersonalities.get(idx);
 
 
 					if (AssessMatch.assessMachNameString(ap, person) == true) {
-						matches.put(ap, person.getName());
-						System.out.println(ap + "\t----\t" + person.getName());
-
+						match_number++;
+						HashMap<AccessPoint,CorporateBody> match = new HashMap<AccessPoint,CorporateBody>();
+						match.put(ap, person);
+						matches.put(match_number, match);
 				}
 
 			}

@@ -1,6 +1,7 @@
 package il.org.yadvashem.map_ap_cbs;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -16,9 +17,9 @@ public class App
 		String apTable = args[1];
 		
 		List<CorporateBody> ehriPersonalities = ParseCBTable.parseCBsTable(ehriTable);
-		List<String> accessPoints = ParseAccessPointsTable.readAccessPointsTable(apTable);
-		ListMatches.listMatches(accessPoints, ehriPersonalities);
-		
+		List<AccessPoint> accessPoints = ParseAccessPointsTable.readAccessPointsTable(apTable);
+		HashMap<Integer, HashMap<AccessPoint, CorporateBody>> listMatches = ListMatches.listMatches(accessPoints, ehriPersonalities);
+		PrintTable.printTableOfMatches(apTable, listMatches);
 				
     }
 }
